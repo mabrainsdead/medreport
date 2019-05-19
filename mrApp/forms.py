@@ -8,3 +8,6 @@ class PacienteForm(forms.Form):
     data_nascimento = forms.DateField(label = 'Data de Nascimento')
     profissao = forms.CharField(label='Profissao', max_length=100)
     
+class ProcurarPacienteForm(forms.Form):
+    procurar_paciente_post = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Procurar..'}), max_length=100)
+    

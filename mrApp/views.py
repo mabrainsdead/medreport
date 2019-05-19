@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from mrApp.models import Paciente
 
 
-from .forms import PacienteForm
+from .forms import PacienteForm, ProcurarPacienteForm
 
 def adicionar_paciente(request):
     '''Adiciona um paciente novo a partir de dados submetidos ou mostra a template vazia para ser preenchida '''
@@ -20,11 +20,16 @@ def adicionar_paciente(request):
         query_set.save()
         
         
-        return HttpResponse(Paciente.objects.filter(nome = query_set.nome).values())
+        return HttpResponse("Thanks")
     else:
         form = PacienteForm()
     
     return render(request, 'adicionar_paciente.html', {'form': form})
 
 def home(request):
-    return render(request, 'home.html')
+    form_procurar_paciente = ProcurarPacienteForm()
+    return render (request, 'home.html', {'form_procurar_paciente': form_procurar_paciente})
+
+def procurar_paciente(request):
+    
+    return HttpResponse(request.POST['procurar_paciente_post'])

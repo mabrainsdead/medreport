@@ -6,8 +6,18 @@
 {% if user.is_authenticated %}
   
     Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
-<div> 
+<div>
+   <!--Adiciona um paciente -->
    <button type="button" class="btn btn btn-lg"><a href="{% url 'adicionar_paciente' %}"> Adicionar paciente</a></button>
+   
+   <!-- Pesquisa um paciente -->
+   <form class="example" action="{% url 'procurar_paciente' %}"" style="margin:auto;max-width:300px" method="post">
+   
+    {% csrf_token %}
+    {{ form_procurar_paciente }}
+       
+       <button type="submit"><i class="fa fa-search"></i></button>
+   </form>
   
 </div>
 {% else %}
