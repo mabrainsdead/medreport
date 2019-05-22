@@ -1,0 +1,39 @@
+ {%extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  
+    Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
+<div>
+   <form id=”search” method=”POST” action="{% url 'search' %}">
+    {% csrf_token %}
+     <input type=”text” class=”form-control” id=”txtSearch” name=”txtSearch”>
+    <button type=”submit” class=”btn btn-default btn-submit”>Submit</button>
+ </form>
+  
+</div>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+
+<script>
+        $(document).ready(function(){ 
+            $("#txtSearch").autocomplete({
+                source: "/ajax_calls/search/",
+                minLength: 2,
+                open: function(){
+                    setTimeout(function () {
+                        $('.ui-autocomplete').css('z-index', 99);
+                    }, 0);
+                }
+              });
+
+        });
+
+</script>
+{% endblock %}
+

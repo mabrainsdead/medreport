@@ -14,7 +14,7 @@
    <form class="example" action="{% url 'procurar_paciente' %}"" style="margin:auto;max-width:300px" method="post">
    
     {% csrf_token %}
-    {{ form_procurar_paciente }}
+    {{ form_procurar_paciente}}
        
        <button type="submit"><i class="fa fa-search"></i></button>
    </form>

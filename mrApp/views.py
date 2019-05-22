@@ -31,5 +31,35 @@ def home(request):
     return render (request, 'home.html', {'form_procurar_paciente': form_procurar_paciente})
 
 def procurar_paciente(request):
+    ''' Elabora rotina para pesquisar paciente  já cadastrado '''
     
-    return HttpResponse(request.POST['procurar_paciente_post'])
+    contexts = []
+    
+    for obj in Paciente.objects.filter(nome = request.POST['procurar_paciente_post']):
+        context = {
+            'nome':  obj.nome, 
+            'sobrenome': obj.sobrenome,
+            'data_nascimento' : obj.data_nascimento,
+            'profissao' : obj.profissao
+            }
+        
+        contexts.append(context)
+        
+    
+    return render(request, 'resultado_pesquisa_paciente.html', {'contexts': contexts})
+
+
+def autocompleteModel(request):
+    '''Pesquisa nome em banco de dados para mandar para ajax '''
+    if request.is_ajax():
+        q = request.GET.get('term', '').capitalize()
+        search_qs = Paciente.objects.filter(name__startswith=q)
+        results = []
+        print(q)
+        for r in search_qs:
+            results.append(r.nome)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)
