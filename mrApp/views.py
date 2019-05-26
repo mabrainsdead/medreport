@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from mrApp.models import Paciente
 import json
-
+import datetime
 
 
 from .forms import PacienteForm, ProcurarPacienteForm
@@ -15,9 +15,14 @@ def adicionar_paciente(request):
         form = PacienteForm(request.POST)
         query_set = Paciente(
             nome = request.POST['nome'],
-            sobrenome = request.POST['sobrenome'],
-            data_nascimento = request.POST['data_nascimento'],
-            profissao = request.POST['profissao'])
+            data_nascimento = conversor_data(request.POST['data_nascimento']),
+            profissao = request.POST['profissao'],
+            email = request.POST['email'],
+            telefone = request.POST['telefone'],
+            endereco = request.POST['endereco'],
+            cidade = request.POST['cidade'],
+            estado = request.POST['estado'])
+        
         
         query_set.save()
         
@@ -62,6 +67,10 @@ def procurar_paciente(request):
     
     return render(request, 'resultado_pesquisa_paciente.html', {'contexts': contexts})
 
+def conversor_data(var):
+    date_provided = var
+    date_converted = datetime.datetime.strptime(date_provided, '%d-%m-%Y').strftime('%Y-%m-%d')
+    return date_converted
 
 
 
