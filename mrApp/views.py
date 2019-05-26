@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from mrApp.models import Paciente
+import json
+
 
 
 from .forms import PacienteForm, ProcurarPacienteForm
@@ -30,6 +32,18 @@ def home(request):
     form_procurar_paciente = ProcurarPacienteForm()
     return render (request, 'home.html', {'form_procurar_paciente': form_procurar_paciente})
 
+def search(request):
+    if request.is_ajax():
+        q = request.GET.get('term','')
+        names = Paciente.objects.filter(nome__istartswith=q)
+        result = []
+        for n in names:
+            name_json = n.nome
+            result.append(name_json)
+        data = json.dumps(result)
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)
+
 def procurar_paciente(request):
     ''' Elabora rotina para pesquisar paciente  já cadastrado '''
     
@@ -49,17 +63,5 @@ def procurar_paciente(request):
     return render(request, 'resultado_pesquisa_paciente.html', {'contexts': contexts})
 
 
-def autocompleteModel(request):
-    '''Pesquisa nome em banco de dados para mandar para ajax '''
-    if request.is_ajax():
-        q = request.GET.get('term', '').capitalize()
-        search_qs = Paciente.objects.filter(name__startswith=q)
-        results = []
-        print(q)
-        for r in search_qs:
-            results.append(r.nome)
-        data = json.dumps(results)
-    else:
-        data = 'fail'
-    mimetype = 'application/json'
-    return HttpResponse(data, mimetype)
+
+

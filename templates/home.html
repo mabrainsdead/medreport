@@ -25,3 +25,17 @@
   <a href="{% url 'login' %}">login</a>
 {% endif %}
 {% endblock %}
+
+{% block js %}
+<script>
+$(function() {
+    $("#procurar_paciente").autocomplete({
+        source: '{%url "search" %}',
+        minLength: 1,
+        delay: 200,
+        
+    });
+    
+});
+      </script>
+{% endblock %}
