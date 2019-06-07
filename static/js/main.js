@@ -1,13 +1,9 @@
 
 
 $(function() {
-    $("#name_search_input").autocomplete({
-        source: '{%url "search" %}',
-        minLength: 1,
-        delay: 200,
-        
-    });
-    
+  $("input:text").keyup(function() {
+        $(this).val($(this).val().replace(/[/]/g, "-"));
+  });
 });
 
 

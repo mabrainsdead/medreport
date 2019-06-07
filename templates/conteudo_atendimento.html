@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  
+    Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
+<div>
+   <BR> <BR> <BR>
+    <p>Data: {{context.data_atendimento | date:"d-m-Y"}}</p>
+    <p>Queixa: {{context.queixa }}</p>
+    <p>Evolução: {{context.evolucao}}</p>
+    <p>Conduta: {{context.conduta}}</p>
+   
+
+
+
+
+   
+</div>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}

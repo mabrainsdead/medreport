@@ -7,8 +7,7 @@ from mrApp.models import Paciente
 class PacienteForm(forms.Form):
     
     nome = forms.CharField(label='Nome', max_length=100)    
-    data_nascimento = forms.DateField(label = 'Data de Nascimento', input_formats=['%m/%d/%Y',
-                                                '%m/%d/%y',])
+    data_nascimento = forms.DateField(label = 'Data de Nascimento', widget = forms.DateInput(attrs={'id':'data'}))
     profissao = forms.CharField(label='Profissao', max_length=100)
     telefone = forms.CharField(label='Telefone', max_length=20)
     email = forms.EmailField(label = 'Email', max_length=50)

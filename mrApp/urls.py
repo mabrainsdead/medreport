@@ -11,5 +11,8 @@ urlpatterns = [
     path('procurar_paciente', views.procurar_paciente, name= 'procurar_paciente'),
     path('search', views.search, name = 'search'),
     path('ajax', TemplateView.as_view(template_name='ajax_test.html')),
+    path('pesquisar_datas_atendimento', views.pesquisar_datas_atendimento, name = 'pesquisar_datas_atendimento'),
+    path('pesquisar_conteudo_atendimento', views.pesquisar_conteudo_atendimento, name = 'pesquisar_conteudo_atendimento'),
+    
     
     ]

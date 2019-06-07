@@ -1,3 +1,5 @@
+<!-- Template para mostrar lista de datas de atendimento -->
+
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
@@ -9,24 +11,21 @@
 <div>
    <table>
   <tr>
-    <th>Nome</th>
-    <th>Profissão</th>
-    <th>Data de Nascimento</th>
-    <th>ID</th>
-   </tr>
+    <th>Id do atendimento</th>
+    <th>Data</th>
+    </tr>
 {% for context in contexts %}
 <tr>
-    <td>{{context.nome}}</td>
-    <td>{{context.profissao }}</td>
-    <td>{{context.data_nascimento | date:"d M Y"}}</td>
-    <td>{{context.id}}</td>
+    <td>{{context.id_atendimento}}</td>
+    <td>{{context.data_atendimento }}</td>
+    
     <td>
-        <form action = "{%url 'pesquisar_datas_atendimento' %}" method="POST"> {% csrf_token %}
-            <input name="paciente_id" type="hidden" value="{{context.id}}">
+        <form action = "{%url 'pesquisar_conteudo_atendimento' %}" method="POST"> {% csrf_token %}
+            <input name="id_atendimento" type="hidden" value="{{context.id_atendimento}}">
             <input type="submit" value="Pesquisar"> 
         </form> 
     </td>
-</tr>
+</tr> 
 {% endfor %}
 </table>
    
