@@ -1371,3 +1371,216 @@ Not Found: /favicon.ico
 [07/Jun/2019 00:53:25] "GET /favicon.ico HTTP/1.1" 404 2199
 Not Found: /resources/demos/style.css
 [07/Jun/2019 00:54:23] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+[07/Jun/2019 00:57:21] "GET /mr/search?term=Tadeu%20da%20Silv HTTP/1.1" 200 18
+[07/Jun/2019 00:57:23] "GET /mr/search?term=W HTTP/1.1" 200 21
+[07/Jun/2019 00:57:23] "GET /mr/search?term=Wer HTTP/1.1" 200 21
+[07/Jun/2019 00:57:27] "POST /mr/procurar_paciente HTTP/1.1" 200 2177
+Not Found: /resources/demos/style.css
+[07/Jun/2019 00:57:28] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+Not Found: /favicon.ico
+[07/Jun/2019 00:57:28] "GET /favicon.ico HTTP/1.1" 404 2199
+[07/Jun/2019 00:57:31] "POST /mr/pesquisar_datas_atendimento HTTP/1.1" 200 1749
+Not Found: /resources/demos/style.css
+[07/Jun/2019 00:57:31] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+Invalid HTTP_HOST header: 'www.cardiobemestar.com.br:8000'. You may need to add 'www.cardiobemestar.com.br' to ALLOWED_HOSTS.
+Bad Request: /mr
+[07/Jun/2019 00:57:39] "GET /mr HTTP/1.1" 400 65783
+----------------------------------------
+Exception happened during processing of request from ('185.156.177.242', 22296)
+[07/Jun/2019 01:18:56] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+[07/Jun/2019 01:18:56] "  *%à     Cookie: mstshash=Test" 400 -
+[07/Jun/2019 01:18:57] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+[07/Jun/2019 01:18:57] "  *%à     Cookie: mstshash=Test" 400 -
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/servers/basehttp.py", line 169, in handle
+    self.handle_one_request()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/servers/basehttp.py", line 179, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib64/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+Invalid HTTP_HOST header: 'www.drantoniobacelar.com.br'. You may need to add 'www.drantoniobacelar.com.br' to ALLOWED_HOSTS.
+Bad Request: /
+[07/Jun/2019 08:48:38] "GET / HTTP/1.1" 400 63708
+Invalid HTTP_HOST header: 'www.crharmonia.com.br'. You may need to add 'www.crharmonia.com.br' to ALLOWED_HOSTS.
+Bad Request: /
+[07/Jun/2019 13:47:08] "GET / HTTP/1.1" 400 63617
+Not Found: /
+[07/Jun/2019 14:38:34] "GET / HTTP/1.1" 404 2143
+Invalid HTTP_HOST header: '8000'. You may need to add '8000' to ALLOWED_HOSTS.
+Bad Request: /
+[07/Jun/2019 16:14:06] "GET / HTTP/1.1" 400 63526
+Invalid HTTP_HOST header: 'www.clinicarharmonia.com.br'. You may need to add 'www.clinicarharmonia.com.br' to ALLOWED_HOSTS.
+Bad Request: /
+[07/Jun/2019 16:17:44] "GET / HTTP/1.1" 400 63707
+[07/Jun/2019 17:44:37] "GET /mr/ HTTP/1.1" 200 2439
+Not Found: /resources/demos/style.css
+[07/Jun/2019 17:44:38] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+[07/Jun/2019 17:44:38] "GET /static/js/main.js HTTP/1.1" 200 123
+Not Found: /favicon.ico
+[07/Jun/2019 17:44:39] "GET /favicon.ico HTTP/1.1" 404 2199
+[07/Jun/2019 17:45:10] "GET /mr/search?term=we HTTP/1.1" 200 2
+[07/Jun/2019 17:45:12] "GET /mr/search?term=wer HTTP/1.1" 200 2
+[07/Jun/2019 17:45:16] "POST /mr/procurar_paciente HTTP/1.1" 200 1727
+Not Found: /resources/demos/style.css
+[07/Jun/2019 17:45:16] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+Not Found: /favicon.ico
+[07/Jun/2019 17:45:16] "GET /favicon.ico HTTP/1.1" 404 2199
+[07/Jun/2019 17:45:21] "GET /mr/search?term=wer HTTP/1.1" 200 2
+[07/Jun/2019 17:45:21] "GET /mr/search?term=wer HTTP/1.1" 200 2
+[07/Jun/2019 17:45:22] "GET /mr/search?term=t HTTP/1.1" 200 2
+[07/Jun/2019 17:45:22] "GET /mr/search?term=ta HTTP/1.1" 200 2
+[07/Jun/2019 17:45:23] "GET /mr/search?term=t HTTP/1.1" 200 2
+[07/Jun/2019 17:45:24] "GET /mr/search?term=T HTTP/1.1" 200 36
+[07/Jun/2019 17:45:24] "GET /mr/search?term=TA HTTP/1.1" 200 2
+[07/Jun/2019 17:45:25] "GET /mr/search?term=T HTTP/1.1" 200 36
+[07/Jun/2019 17:45:26] "GET /mr/search?term=Ta HTTP/1.1" 200 36
+[07/Jun/2019 17:45:30] "POST /mr/procurar_paciente HTTP/1.1" 200 2175
+Not Found: /resources/demos/style.css
+[07/Jun/2019 17:45:30] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+Not Found: /favicon.ico
+[07/Jun/2019 17:45:31] "GET /favicon.ico HTTP/1.1" 404 2199
+[07/Jun/2019 17:45:35] "POST /mr/pesquisar_datas_atendimento HTTP/1.1" 200 2570
+Not Found: /resources/demos/style.css
+[07/Jun/2019 17:45:36] "GET /resources/demos/style.css HTTP/1.1" 404 2241
+Not Found: /favicon.ico
+[07/Jun/2019 17:45:36] "GET /favicon.ico HTTP/1.1" 404 2199
+/home/wercules/medreport/mrApp/forms.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 07, 2019 - 00:35:39
+Django version 2.2.1, using settings 'mrProject.settings'
+Starting development server at http://cardiobemestar.com.br:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/management/base.py", line 390, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/management/base.py", line 377, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+    url_patterns = getattr(resolver, 'url_patterns', [])
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/urls/resolvers.py", line 579, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib64/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/wercules/medreport/mrProject/urls.py", line 20, in <module>
+    path('mr/', include('mrApp.urls')),
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib64/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/wercules/medreport/mrApp/urls.py", line 5, in <module>
+    from . import views
+  File "/home/wercules/medreport/mrApp/views.py", line 8, in <module>
+    from .forms import PacienteForm, ProcurarPacienteForm
+  File "/home/wercules/medreport/mrApp/forms.py", line 25, in <module>
+    class AtendimentoForm(forms.Form):
+  File "/home/wercules/medreport/mrApp/forms.py", line 26, in AtendimentoForm
+    data_atendimento = form.DateField(label = 'Data de Nascimento', widget = forms.DateInput(attrs={'id':'data'}))
+NameError: name 'form' is not defined
+
+Performing system checks...
+
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/management/base.py", line 390, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/management/base.py", line 377, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+    url_patterns = getattr(resolver, 'url_patterns', [])
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/urls/resolvers.py", line 579, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/urls/resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib64/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/wercules/medreport/mrProject/urls.py", line 20, in <module>
+    path('mr/', include('mrApp.urls')),
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib64/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/wercules/medreport/mrApp/urls.py", line 5, in <module>
+    from . import views
+  File "/home/wercules/medreport/mrApp/views.py", line 8, in <module>
+    from .forms import PacienteForm, ProcurarPacienteForm
+  File "/home/wercules/medreport/mrApp/forms.py", line 25, in <module>
+    class AtendimentoForm(forms.Form):
+  File "/home/wercules/medreport/mrApp/forms.py", line 26, in AtendimentoForm
+    data_atendimento = form.DateField(label = 'Data de Nascimento', widget = forms.DateInput(attrs={'id':'data'}))
+NameError: name 'form' is not defined
+
+/home/wercules/medreport/mrApp/forms.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader

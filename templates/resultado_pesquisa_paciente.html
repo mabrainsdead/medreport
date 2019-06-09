@@ -21,9 +21,15 @@
     <td>{{context.data_nascimento | date:"d M Y"}}</td>
     <td>{{context.id}}</td>
     <td>
+        <form action = "{%url 'cadastrar_atendimento' %}" method="POST"> {% csrf_token %}
+            <input name="paciente_id" type="hidden" value="{{context.id}}">
+            <input type="submit" value="Cadastrar Atendimento"> 
+        </form> 
+    </td>
+    <td>
         <form action = "{%url 'pesquisar_datas_atendimento' %}" method="POST"> {% csrf_token %}
             <input name="paciente_id" type="hidden" value="{{context.id}}">
-            <input type="submit" value="Pesquisar"> 
+            <input type="submit" value="Pesquisar Atendimento"> 
         </form> 
     </td>
 </tr>

@@ -13,11 +13,17 @@
   <tr>
     <th>Id do atendimento</th>
     <th>Data</th>
+    Paciente_id = {{paciente_id}}
     </tr>
+  <form action = "{%url 'cadastrar_atendimento' %}" method= "POST">{% csrf_token %}
+     <input name="paciente_id" type="hidden" value="{{paciente_id}}">
+     <input type="submit" value="Cadastrar Novo Atendimento"> 
+    </form>
 {% for context in contexts %}
 <tr>
     <td>{{context.id_atendimento}}</td>
     <td>{{context.data_atendimento }}</td>
+    
     
     <td>
         <form action = "{%url 'pesquisar_conteudo_atendimento' %}" method="POST"> {% csrf_token %}
@@ -28,8 +34,7 @@
 </tr> 
 {% endfor %}
 </table>
-   
-   
+
 </div>
 {% else %}
   <p>You are not logged in</p>

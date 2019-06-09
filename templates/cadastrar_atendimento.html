@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  
+    Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
+<div>
+<form action = "{%url 'cadastrar_atendimento'%}" method="POST">{% csrf_token %}
+    
+    {{form.as_p }}
+    Paciente ID:{{context.paciente_id}}
+    <input name="paciente_id" type="hidden" value={{context.paciente_id}}>
+    
+    <input type="submit" value="Submit">
+</form>
+   
+  
+</div>
+
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
+

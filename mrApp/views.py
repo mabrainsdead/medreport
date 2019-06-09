@@ -5,7 +5,7 @@ import json
 import datetime
 
 
-from .forms import PacienteForm, ProcurarPacienteForm
+from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm
 
 def adicionar_paciente(request):
     '''Adiciona um paciente novo a partir de dados submetidos ou mostra a template vazia para ser preenchida '''
@@ -26,8 +26,19 @@ def adicionar_paciente(request):
         
         query_set.save()
         
+        form = AtendimentoForm()
         
-        return HttpResponse("Thanks")
+        for fieldValue in Paciente.objects.filter(nome = request.POST['nome']):
+                  
+            context = {
+               'paciente_id':fieldValue.id 
+            }
+        
+
+        
+        
+        return render(request, 'cadastrar_atendimento.html', {'form': form, 'context':context})
+    
     else:
         form = PacienteForm()
     
@@ -88,7 +99,7 @@ def pesquisar_datas_atendimento(request):
         
         contexts.append(context)
     
-    return render (request, 'resultado_pesquisa_datas_atendimento.html', {'contexts':contexts})
+    return render (request, 'resultado_pesquisa_datas_atendimento.html', {'contexts':contexts, 'paciente_id':request.POST['paciente_id']})
 
 def pesquisar_conteudo_atendimento(request):
     '''Mostra conteúdo de atendimento por data '''
@@ -99,8 +110,34 @@ def pesquisar_conteudo_atendimento(request):
             'evolucao': conteudo_atendimento.evolucao,
             'conduta' : conteudo_atendimento.conduta
         }
-    return render(request, 'conteudo_atendimento.html', {'context':context})
+    return render(request, 'conteudo_atendimento.html', {'context':context}) 
+   
+    
 
+def cadastrar_atendimento(request):
+    '''Cadastra atendimento '''
+    if request.method == 'POST':
+        query_set = Atendimento(
+            data_atendimento = conversor_data(request.POST['data_atendimento']),
+            queixa = request.POST['queixa'],
+            evolucao = request.POST['evolucao'],
+            conduta = request.POST['conduta'],
+            paciente_id = request.POST['paciente_id'], 
+            )
+        
+        
+        query_set.save()
+        return HttpResponse("Atendimento cadastrado")
+        
+    else:
+    
+        form = AtendimentoForm()
+        
+        context = {
+            'paciente_id': request.POST['paciente_id']
+        }
+        
+        return render(request, 'cadastrar_atendimento.html', {'form': form, 'context':context})
         
     
 

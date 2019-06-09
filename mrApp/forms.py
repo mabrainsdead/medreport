@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from mrApp.models import Paciente
+from mrApp.models import Paciente, Atendimento
 
 
 
@@ -21,3 +21,13 @@ class PacienteForm(forms.Form):
 class ProcurarPacienteForm(forms.Form):
     procurar_paciente_post = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Procurar..', 'id':'procurar_paciente'}), max_length=100)
     
+    
+class AtendimentoForm(forms.Form):
+    data_atendimento = forms.DateField(label = 'Data do Atendimento ', widget = forms.DateInput(attrs={'id':'data'}))
+    queixa =  forms.CharField(label = 'Queixa')
+    evolucao = forms.CharField(label = 'História')
+    conduta = forms.CharField(label= 'Conduta')
+    
+    
+    class Meta:
+        model = Atendimento

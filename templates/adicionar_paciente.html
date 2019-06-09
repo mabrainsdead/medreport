@@ -6,16 +6,7 @@
 <form action="adicionar_paciente" method="post">
     {% csrf_token %}
     
-    <!--
-    Nome completo: <input type="text" name = 'nome' id='nome'>
-    Data de Nascimento: <input type="text" name = 'data_nascimento' id='data_nascimento'>
-    Telefone:<input type="text" name = 'telefone' id='telefone' value="">
-    Profissão:<input type="text" name = 'profissao' id='profissao' value="">
-    Email:<input type="text" name = 'email' id='email' value="">
-    Endereço:<input type="text" name = 'endereco' id='endereco' value="">
-    Cidade:<input type="text" name = 'cidade' id='cidade' value="">
-    Estado: <input type="text" name = 'estado' id='estado' value="">
-    -->
+    
     {{form}}
     
     <input type="submit" value="Submit">
