@@ -15,7 +15,7 @@
     <th>Data</th>
     Paciente_id = {{paciente_id}}
     </tr>
-  <form action = "{%url 'cadastrar_atendimento' %}" method= "POST">{% csrf_token %}
+  <form action = "{%url 'cadastrar_atendimento' %}" method= "get">{% csrf_token %}
      <input name="paciente_id" type="hidden" value="{{paciente_id}}">
      <input type="submit" value="Cadastrar Novo Atendimento"> 
     </form>

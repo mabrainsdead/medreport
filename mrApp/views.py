@@ -5,7 +5,10 @@ import json
 import datetime
 
 
-from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm
+from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm, ReceituarioForm
+
+
+
 
 def adicionar_paciente(request):
     '''Adiciona um paciente novo a partir de dados submetidos ou mostra a template vazia para ser preenchida '''
@@ -117,13 +120,22 @@ def pesquisar_conteudo_atendimento(request):
 def cadastrar_atendimento(request):
     '''Cadastra atendimento '''
     if request.method == 'POST':
-        query_set = Atendimento(
-            data_atendimento = conversor_data(request.POST['data_atendimento']),
-            queixa = request.POST['queixa'],
-            evolucao = request.POST['evolucao'],
-            conduta = request.POST['conduta'],
-            paciente_id = request.POST['paciente_id'], 
-            )
+        if not request.POST['data_atendimento']:
+            query_set = Atendimento(
+                data_atendimento = datetime.date.today(),
+                queixa = request.POST['queixa'],
+                evolucao = request.POST['evolucao'],
+                conduta = request.POST['conduta'],
+                paciente_id = request.POST['paciente_id'], 
+                )
+        else:
+            query_set = Atendimento(
+                data_atendimento = conversor_data(request.POST['data_atendimento']),
+                queixa = request.POST['queixa'],
+                evolucao = request.POST['evolucao'],
+                conduta = request.POST['conduta'],
+                paciente_id = request.POST['paciente_id'], 
+                )
         
         
         query_set.save()
@@ -131,13 +143,15 @@ def cadastrar_atendimento(request):
         
     else:
     
-        form = AtendimentoForm()
+        form_anamnese = AtendimentoForm()
+        form_receituario = ReceituarioForm()
+        
         
         context = {
-            'paciente_id': request.POST['paciente_id']
+            'paciente_id': request.GET['paciente_id']
         }
         
-        return render(request, 'cadastrar_atendimento.html', {'form': form, 'context':context})
+        return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form_anamnese, 'context':context, 'form_receituario':form_receituario})
         
     
 

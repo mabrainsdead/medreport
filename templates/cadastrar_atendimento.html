@@ -9,12 +9,15 @@
 <div>
 <form action = "{%url 'cadastrar_atendimento'%}" method="POST">{% csrf_token %}
     
-    {{form.as_p }}
+    {{form_anamnese.as_p }}
+    
     Paciente ID:{{context.paciente_id}}
     <input name="paciente_id" type="hidden" value={{context.paciente_id}}>
     
     <input type="submit" value="Submit">
 </form>
+
+{{form_receituario.as_table}}
    
   
 </div>

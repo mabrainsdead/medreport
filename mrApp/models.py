@@ -17,7 +17,19 @@ class Paciente(models.Model):
     
 class Atendimento(models.Model):
     data_atendimento = models.DateField(null=False)
-    queixa =  models.TextField()
     evolucao = models.TextField()
-    conduta = models.TextField()
+    solicitacao_exame_lab = models.TextField(null = True)
+    solicitacao_exame_imagem = models.TextField(null = True)
+    atestado = models.TextField(null = True)
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    
+class Receituario(models.Model):
+    atendimento = models.ForeignKey(Atendimento, on_delete=models.CASCADE)
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    nome_droga = models.CharField(max_length=200, default = '')
+    apresentacao_droga = models.CharField(max_length=200, default = '')
+    quantidade_droga = models.CharField(max_length=200, default = '')
+    forma_uso_droga = models.CharField(max_length=200, default = '')
+    duracao_uso_droga = models.CharField(max_length=200, default = '')
+    
+    

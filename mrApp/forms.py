@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from mrApp.models import Paciente, Atendimento
+from mrApp.models import Paciente, Atendimento, Receituario
 
 
 
@@ -23,11 +23,23 @@ class ProcurarPacienteForm(forms.Form):
     
     
 class AtendimentoForm(forms.Form):
-    data_atendimento = forms.DateField(label = 'Data do Atendimento ', widget = forms.DateInput(attrs={'id':'data'}))
-    queixa =  forms.CharField(label = 'Queixa')
+    
+    data_atendimento = forms.DateField(label = 'Data do Atendimento ', required=False, widget = forms.DateInput(attrs={'id':'data'}))
     evolucao = forms.CharField(label = 'História')
-    conduta = forms.CharField(label= 'Conduta')
-    
-    
+    solicitacao_exame_lab = forms.CharField(label = 'Exames Laboratoriais', required=False)
+    solicitacao_exame_imagem = forms.CharField(label = 'Exames de imagem', required=False)
+    atestado = forms.CharField(label = 'Atestado', required=False)
+       
     class Meta:
         model = Atendimento
+        
+        
+class ReceituarioForm(forms.Form):
+    nome_droga = forms.CharField(max_length=200)
+    apresentacao_droga = forms.CharField(max_length=200)
+    quantidade_droga = forms.CharField(max_length=200)
+    forma_uso_droga = forms.CharField(max_length=200)
+    duracao_uso_droga = forms.CharField(max_length=200)
+    
+    class Meta:
+        model = Receituario
