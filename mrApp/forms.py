@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from mrApp.models import Paciente, Atendimento, Receituario
+from mrApp.models import Paciente, Atendimento, Receituario, Post
 
 
 
@@ -43,3 +43,16 @@ class ReceituarioForm(forms.Form):
     
     class Meta:
         model = Receituario
+        
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        # exclude = ['author', 'updated', 'created', ]
+        fields = ['text']
+        widgets = {
+            'text': forms.TextInput(attrs={
+                'id': 'post-text', 
+                'required': True, 
+                'placeholder': 'Say something...'
+            }),
+        }

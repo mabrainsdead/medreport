@@ -1,13 +1,46 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse
-from mrApp.models import Paciente, Atendimento
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from mrApp.models import Paciente, Atendimento, Post, Receituario
 import json
 import datetime
+import logging
 
 
-from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm, ReceituarioForm
+from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm, ReceituarioForm, PostForm
 
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(name)-12s %(levelname)-8s %(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'debug.log'
+        }
+    },
+    'loggers': {
+        '': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file']
+        }
+    }
+})
 
+# This retrieves a Python logging instance (or creates it)
+logger = logging.getLogger(__name__)
 
 
 def adicionar_paciente(request):
@@ -87,9 +120,6 @@ def conversor_data(date_provided):
     date_converted = datetime.datetime.strptime(date_provided, "%d-%m-%Y").strftime('%Y-%m-%d')
     return date_converted
 
-
-
-
 def pesquisar_datas_atendimento(request):
     ''' Elabora rotina para pesquisa lista de data de atendimentos ''' 
     contexts = []
@@ -115,8 +145,6 @@ def pesquisar_conteudo_atendimento(request):
         }
     return render(request, 'conteudo_atendimento.html', {'context':context}) 
    
-    
-
 def cadastrar_atendimento(request):
     '''Cadastra atendimento '''
     if request.method == 'POST':
@@ -152,6 +180,42 @@ def cadastrar_atendimento(request):
         }
         
         return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form_anamnese, 'context':context, 'form_receituario':form_receituario})
+    
+def inserir_texto_ajax(request):
+    if request.method=='POST':
+        
+        obj = Post(text = request.POST['text'])
+        obj.save()
+    
+        return JsonResponse({'error':'something bad'})
+        
+    
+    else:
+        return HttpResponse ("erro")
+
+def ajax(request):
+    return render(request, 'ajax_test.html')
+
+def adicionar_prescricao(request):
+    if request.method == 'POST':
+        if request.POST['action'] == 'Salvar e fechar':
+            return HttpResponse('Salvar e Fechar')
+        if request.POST['action'] == 'Salvar e adicionar outra medicação':
+            return HttpResponse('Salvar e adicionar outra medicação')
+    else :
+        
+        form = ReceituarioForm()
+    
+        return render(request, 'adicionar_prescricao.html', {'form': form})
+
+
+    
+
+
+
+
+
+
         
     
 

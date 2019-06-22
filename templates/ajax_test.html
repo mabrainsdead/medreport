@@ -5,24 +5,17 @@
 {% block content %}
 
 <div>
-  
-     <input type="text" id="name_search_input" name="nome" />
-
+   <form action="{%url 'inserir_texto_ajax' %}" method="POST">{% csrf_token %}
+     <input type="text" id='text' name='text'>
+     <input type="submit" value="Submit">
+   </form>
+   
+<p id = 'demo'>VERMELHO</p>
 
   
 </div>
 
-<script>
-$(function() {
-    $("#name_search_input").autocomplete({
-        source: '{%url "search" %}',
-        minLength: 1,
-        delay: 200,
-        
-    });
-    
-});
-</script>
+
 {% endblock %}
 
 

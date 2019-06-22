@@ -17,7 +17,7 @@
     <input type="submit" value="Submit">
 </form>
 
-{{form_receituario.as_table}}
+<a href = "{% url 'adicionar_prescricao' %}"><button>Prescrição</button></a>
    
   
 </div>
@@ -27,5 +27,7 @@
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
 {% endif %}
+
+  
 {% endblock %}
 

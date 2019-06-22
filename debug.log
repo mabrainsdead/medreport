@@ -1,0 +1,37 @@
+
+2019-06-22 00:19:24,470 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:19:28,075 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:22:14,724 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 00:24:46,202 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 00:26:58,045 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:38:07,703 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:38:40,166 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:41:49,331 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 00:42:03,269 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:42:10,928 django.request ERROR    Internal Server Error: /mr/adicionar_prescricao
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'action'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 201, in adicionar_prescricao
+    if request.POST['action'] == 'salvar_fechar':
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'action'
+2019-06-22 00:42:11,866 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:43:23,512 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:43:33,655 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:43:35,355 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:45:52,928 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 00:45:58,052 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:46:15,191 django.request WARNING  Not Found: /favicon.ico

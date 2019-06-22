@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  
+    Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
+<div>
+<form action="{% url 'adicionar_prescricao' %}" method="post">{% csrf_token %}
+    
+    {{form.as_p}}
+    <input type="submit" value="Salvar e fechar" name='action'>
+    <input type="submit" value="Salvar e adicionar outra medicação" name='action'>
+</form>
+   
+  
+</div>
+
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+  
+{% endblock %}
