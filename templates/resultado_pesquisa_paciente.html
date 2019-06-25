@@ -14,26 +14,26 @@
     <th>Data de Nascimento</th>
     <th>ID</th>
    </tr>
-{% for context in contexts %}
+
 <tr>
-    <td>{{context.nome}}</td>
-    <td>{{context.profissao }}</td>
-    <td>{{context.data_nascimento | date:"d M Y"}}</td>
-    <td>{{context.id}}</td>
+    <td>{{paciente.nome}}</td>
+    <td>{{paciente.profissao }}</td>
+    <td>{{paciente.data_nascimento | date:"d M Y"}}</td>
+    <td>{{paciente.id}}</td>
     <td>
         <form action = "{%url 'cadastrar_atendimento' %}" method="GET"> 
-            <input name="paciente_id" type="hidden" value="{{context.id}}">
+            <input name="paciente_id" type="hidden" value="{{paciente.id}}">
             <input type="submit" value="Cadastrar Atendimento"> 
         </form> 
     </td>
     <td>
         <form action = "{%url 'pesquisar_datas_atendimento' %}" method="POST"> {% csrf_token %}
-            <input name="paciente_id" type="hidden" value="{{context.id}}">
+            <input name="paciente_id" type="hidden" value="{{paciente.id}}">
             <input type="submit" value="Pesquisar Atendimento"> 
         </form> 
     </td>
 </tr>
-{% endfor %}
+
 </table>
    
    

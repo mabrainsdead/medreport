@@ -7,19 +7,21 @@
   
     Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
 <div>
+  
+<h1>ID:{{paciente.id}} - {{paciente.nome}}</h1>
+  
+  
 <form action = "{%url 'cadastrar_atendimento'%}" method="POST">{% csrf_token %}
     
     {{form_anamnese.as_p }}
     
-    Paciente ID:{{context.paciente_id}}
-    <input name="paciente_id" type="hidden" value={{context.paciente_id}}>
     
-    <input type="submit" value="Submit">
+    <input name="paciente_id" type="hidden" value="{{paciente.id}}">
+    
+    <input type="submit" value="Registrar atendimento">
 </form>
 
-<a href = "{% url 'adicionar_prescricao' %}"><button>Prescrição</button></a>
-   
-  
+
 </div>
 
 

@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from mrApp.models import Paciente, Atendimento, Post, Receituario
 import json
 import datetime
 import logging
-
 
 from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm, ReceituarioForm, PostForm
 
@@ -42,7 +41,6 @@ logging.config.dictConfig({
 # This retrieves a Python logging instance (or creates it)
 logger = logging.getLogger(__name__)
 
-
 def adicionar_paciente(request):
     '''Adiciona um paciente novo a partir de dados submetidos ou mostra a template vazia para ser preenchida '''
     # if this is a POST request we need to process the form data
@@ -57,23 +55,16 @@ def adicionar_paciente(request):
             telefone = request.POST['telefone'],
             endereco = request.POST['endereco'],
             cidade = request.POST['cidade'],
-            estado = request.POST['estado'])
+            estado = request.POST['estado'])     
         
+        query_set.save()        
+        form = AtendimentoForm() #Instancia form de anamnese para mandar via context
         
-        query_set.save()
+        paciente = get_object_or_404(Paciente, email=request.POST['email'])
         
-        form = AtendimentoForm()
+          
         
-        for fieldValue in Paciente.objects.filter(nome = request.POST['nome']):
-                  
-            context = {
-               'paciente_id':fieldValue.id 
-            }
-        
-
-        
-        
-        return render(request, 'cadastrar_atendimento.html', {'form': form, 'context':context})
+        return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form, 'paciente':paciente})
     
     else:
         form = PacienteForm()
@@ -99,20 +90,9 @@ def search(request):
 def procurar_paciente(request):
     ''' Elabora rotina para pesquisar paciente  já cadastrado '''
     
-    contexts = []
-    
-    for obj in Paciente.objects.filter(nome = request.POST['procurar_paciente_post']):
-        context = {
-            'nome':  obj.nome, 
-            'data_nascimento' : obj.data_nascimento,
-            'profissao' : obj.profissao,
-            'id':obj.id
-            }
+    paciente = get_object_or_404(Paciente, nome = request.POST['procurar_paciente_post'])
         
-        contexts.append(context)
-        
-    
-    return render(request, 'resultado_pesquisa_paciente.html', {'contexts': contexts})
+    return render(request, 'resultado_pesquisa_paciente.html', {'paciente':paciente}) 
 
 def conversor_data(date_provided):
     ''' Converte datas para entrada no banco de dados '''
@@ -151,7 +131,6 @@ def cadastrar_atendimento(request):
         if not request.POST['data_atendimento']:
             query_set = Atendimento(
                 data_atendimento = datetime.date.today(),
-                queixa = request.POST['queixa'],
                 evolucao = request.POST['evolucao'],
                 conduta = request.POST['conduta'],
                 paciente_id = request.POST['paciente_id'], 
@@ -197,13 +176,20 @@ def ajax(request):
     return render(request, 'ajax_test.html')
 
 def adicionar_prescricao(request):
+    '''Rotina para acrescentar, modificar e deletar prescrição no atendimento '''
+    
     if request.method == 'POST':
         if request.POST['action'] == 'Salvar e fechar':
+            '''Rotina para salvar e voltar ao atendimento '''
             return HttpResponse('Salvar e Fechar')
+        
+        
         if request.POST['action'] == 'Salvar e adicionar outra medicação':
+            '''Rotina para salvar e recarregar formulário para nova medicação'''
+            
             return HttpResponse('Salvar e adicionar outra medicação')
     else :
-        
+        '''Exibir formulário vazio no redirecionamento do template'''
         form = ReceituarioForm()
     
         return render(request, 'adicionar_prescricao.html', {'form': form})

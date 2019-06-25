@@ -26,10 +26,8 @@
     
     
     <td>
-        <form action = "{%url 'pesquisar_conteudo_atendimento' %}" method="POST"> {% csrf_token %}
-            <input name="id_atendimento" type="hidden" value="{{context.id_atendimento}}">
-            <input type="submit" value="Pesquisar"> 
-        </form> 
+          <a href="{%url 'pesquisar_conteudo_atendimento' %}{{context.id_atendimento}}"><button>Pesquisar Atendimento {{context.id_atendimento}} </button></a>
+        
     </td>
 </tr> 
 {% endfor %}

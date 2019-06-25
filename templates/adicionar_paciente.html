@@ -3,8 +3,7 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<form action="adicionar_paciente" method="post">
-    {% csrf_token %}
+<form action="adicionar_paciente" method="post">{% csrf_token %}
     
     
     {{form}}

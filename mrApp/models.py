@@ -31,8 +31,7 @@ class Receituario(models.Model):
     quantidade_droga = models.CharField(max_length=200, default = '')
     forma_uso_droga = models.CharField(max_length=200, default = '')
     duracao_uso_droga = models.CharField(max_length=200, default = '')
-    
-    
+       
 class Post(models.Model):
     text = models.CharField(max_length=200, default = '')
     

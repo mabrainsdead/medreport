@@ -35,3 +35,583 @@ django.utils.datastructures.MultiValueDictKeyError: 'action'
 2019-06-22 00:45:52,928 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
 2019-06-22 00:45:58,052 django.request WARNING  Not Found: /favicon.ico
 2019-06-22 00:46:15,191 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 00:53:10,854 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 00:53:15,653 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 00:54:02,845 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-22 14:00:47,318 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 14:00:53,297 django.request WARNING  Not Found: /favicon.ico
+2019-06-22 16:11:20,531 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'drantoniobacelar.com.br'. You may need to add 'drantoniobacelar.com.br' to ALLOWED_HOSTS.
+2019-06-22 16:11:21,255 django.request WARNING  Bad Request: /
+2019-06-22 17:49:22,807 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'www.andreagaspar.com.br'. You may need to add 'www.andreagaspar.com.br' to ALLOWED_HOSTS.
+2019-06-22 17:49:22,876 django.request WARNING  Bad Request: /
+2019-06-23 10:13:31,384 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '185.135.8.139:8000'. You may need to add '185.135.8.139' to ALLOWED_HOSTS.
+2019-06-23 10:13:31,510 django.request WARNING  Bad Request: /
+2019-06-23 14:56:10,547 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '185.135.8.139:8000'. You may need to add '185.135.8.139' to ALLOWED_HOSTS.
+2019-06-23 14:56:10,711 django.request WARNING  Bad Request: /
+2019-06-23 19:59:19,278 django.request WARNING  Not Found: /
+2019-06-23 19:59:19,836 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 19:59:32,262 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:01:18,403 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:12:33,232 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'data_atendimento'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 149, in cadastrar_atendimento
+    if not request.POST['data_atendimento']:
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'data_atendimento'
+2019-06-23 20:12:34,157 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:17:28,823 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 20:17:37,677 django.request ERROR    Internal Server Error: /mr/adicionar_paciente
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry 'wer@sfd.br' for key 'email'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 61, in adicionar_paciente
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1062, "Duplicate entry 'wer@sfd.br' for key 'email'")
+2019-06-23 20:17:38,953 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:19:32,406 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:19:34,997 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:46:00,419 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 20:46:07,473 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 20:52:00,679 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/urls.py changed, reloading.
+2019-06-23 20:52:12,558 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/urls.py changed, reloading.
+2019-06-23 20:54:11,031 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 20:58:50,609 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/urls.py changed, reloading.
+2019-06-23 21:00:19,748 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:00:42,629 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:02:57,255 django.request ERROR    Internal Server Error: /mr/adicionar_paciente
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry 'jose@gmail.com.br' for key 'email'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 60, in adicionar_paciente
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1062, "Duplicate entry 'jose@gmail.com.br' for key 'email'")
+2019-06-23 21:02:58,589 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:03:24,618 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:03:27,612 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:03:58,517 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'queixa'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 145, in cadastrar_atendimento
+    queixa = request.POST['queixa'],
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'queixa'
+2019-06-23 21:03:59,488 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:04:28,992 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 21:04:37,998 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 21:04:43,401 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'conduta'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 146, in cadastrar_atendimento
+    conduta = request.POST['conduta'],
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'conduta'
+2019-06-23 21:04:44,356 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:04:57,950 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 21:05:05,346 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 146, in cadastrar_atendimento
+    paciente_id = request.POST['paciente_id'],
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Atendimento() got an unexpected keyword argument 'sevolucao'
+2019-06-23 21:05:06,220 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:05:15,974 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-23 21:05:21,065 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'paciente_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 158, in cadastrar_atendimento
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'paciente_id' cannot be null")
+2019-06-23 21:05:22,565 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:05:49,943 django.request ERROR    Internal Server Error: /mr/adicionar_paciente
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry 'jose@gmail.com.br' for key 'email'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 60, in adicionar_paciente
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1062, "Duplicate entry 'jose@gmail.com.br' for key 'email'")
+2019-06-23 21:05:51,331 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:06:13,745 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:06:22,932 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'paciente_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 158, in cadastrar_atendimento
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'paciente_id' cannot be null")
+2019-06-23 21:06:24,022 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:07:24,086 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:07:26,006 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'paciente_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 158, in cadastrar_atendimento
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'paciente_id' cannot be null")
+2019-06-23 21:07:27,281 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:08:09,326 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/forms.py changed, reloading.
+2019-06-23 21:09:44,616 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/cursors.py", line 312, in _query
+    db.query(q)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/MySQLdb/connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'paciente_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 158, in cadastrar_atendimento
+    query_set.save()
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    raise utils.IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'paciente_id' cannot be null")
+2019-06-23 21:09:46,118 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:27:27,487 django.request ERROR    Internal Server Error: /mr/pesquisar_conteudo_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 133, in pesquisar_conteudo_atendimento
+    'queixa': conteudo_atendimento.queixa,
+AttributeError: 'Atendimento' object has no attribute 'queixa'
+2019-06-23 21:40:00,865 django.request WARNING  Not Found: /favicon.ico
+2019-06-23 21:40:03,805 django.request WARNING  Not Found: /mr/pesquisar_conteudo_atendimento11
+2019-06-24 01:22:38,647 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '185.135.8.139:8000'. You may need to add '185.135.8.139' to ALLOWED_HOSTS.
+2019-06-24 01:22:38,760 django.request WARNING  Bad Request: /
+2019-06-25 00:04:27,172 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:04:31,268 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:04:51,876 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:05:05,008 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:23:30,579 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:27:53,331 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:28:01,365 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:28:11,402 django.request ERROR    Internal Server Error: /mr/procurar_paciente
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 110, in procurar_paciente
+    return render(request, 'resultado_pesquisa_paciente.html', {'contexts': contexts})
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/template/defaulttags.py", line 165, in render
+    values = list(values)
+TypeError: 'Paciente' object is not iterable
+2019-06-25 00:33:57,191 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:35:30,724 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:38:29,023 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:38:36,692 django.request ERROR    Internal Server Error: /mr/procurar_paciente
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 94, in procurar_paciente
+    s
+NameError: name 's' is not defined
+2019-06-25 00:38:37,536 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:38:46,036 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:38:49,866 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:38:55,352 django.request WARNING  Not Found: /favicon.ico
