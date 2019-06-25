@@ -132,15 +132,12 @@ def cadastrar_atendimento(request):
             query_set = Atendimento(
                 data_atendimento = datetime.date.today(),
                 evolucao = request.POST['evolucao'],
-                conduta = request.POST['conduta'],
                 paciente_id = request.POST['paciente_id'], 
                 )
         else:
             query_set = Atendimento(
                 data_atendimento = conversor_data(request.POST['data_atendimento']),
-                queixa = request.POST['queixa'],
                 evolucao = request.POST['evolucao'],
-                conduta = request.POST['conduta'],
                 paciente_id = request.POST['paciente_id'], 
                 )
         
@@ -151,14 +148,16 @@ def cadastrar_atendimento(request):
     else:
     
         form_anamnese = AtendimentoForm()
-        form_receituario = ReceituarioForm()
         
         
-        context = {
+        paciente = get_object_or_404(Paciente, id = request.GET['paciente_id'])
+        
+        '''
+        paciente = {
             'paciente_id': request.GET['paciente_id']
-        }
+        }'''
         
-        return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form_anamnese, 'context':context, 'form_receituario':form_receituario})
+        return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form_anamnese, 'paciente':paciente})
     
 def inserir_texto_ajax(request):
     if request.method=='POST':

@@ -615,3 +615,34 @@ NameError: name 's' is not defined
 2019-06-25 00:38:46,036 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
 2019-06-25 00:38:49,866 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
 2019-06-25 00:38:55,352 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:40:23,866 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:40:29,227 django.request WARNING  Not Found: /mr/pesquisar_conteudo_atendimento11
+2019-06-25 00:40:29,761 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:40:35,558 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:42:34,043 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:45:22,775 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:45:39,717 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:46:41,094 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:47:20,972 django.request ERROR    Internal Server Error: /mr/cadastrar_atendimento
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'conduta'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wercules/medreport/mrApp/views.py", line 135, in cadastrar_atendimento
+    conduta = request.POST['conduta'],
+  File "/home/wercules/.local/share/virtualenvs/medreport-3oUkA-aL/lib/python3.6/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'conduta'
+2019-06-25 00:47:21,602 django.request WARNING  Not Found: /favicon.ico
+2019-06-25 00:48:22,829 django.utils.autoreload INFO     /home/wercules/medreport/mrApp/views.py changed, reloading.
+2019-06-25 00:48:29,228 django.request WARNING  Not Found: /favicon.ico
