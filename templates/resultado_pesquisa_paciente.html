@@ -6,7 +6,9 @@
 {% if user.is_authenticated %}
   
     Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
-<div>
+    
+    
+<div> <h4>template: Resultado_pesquisa_paciente.html</h4>
    <table>
   <tr>
     <th>Nome</th>
@@ -21,11 +23,8 @@
     <td>{{paciente.data_nascimento | date:"d M Y"}}</td>
     <td>{{paciente.id}}</td>
     <td>
-        <form action = "{%url 'cadastrar_atendimento' %}" method="GET"> 
-            <input name="paciente_id" type="hidden" value="{{paciente.id}}">
-            <input type="submit" value="Cadastrar Atendimento"> 
-        </form> 
-    </td>
+        <a href="{%url 'cadastrar_atendimento'  paciente.id %}"><button>{%url 'cadastrar_atendimento'  paciente.id %}</button></a>
+      
     <td>
         <form action = "{%url 'pesquisar_datas_atendimento' %}" method="POST"> {% csrf_token %}
             <input name="paciente_id" type="hidden" value="{{paciente.id}}">
@@ -35,7 +34,8 @@
 </tr>
 
 </table>
-   
+  
+
    
 </div>
 {% else %}

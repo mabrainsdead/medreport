@@ -13,10 +13,11 @@ urlpatterns = [
     path('ajax', views.ajax, name  = 'ajax'),
     path('pesquisar_datas_atendimento', views.pesquisar_datas_atendimento, name = 'pesquisar_datas_atendimento'),
     path('pesquisar_conteudo_atendimento', views.pesquisar_conteudo_atendimento, name = 'pesquisar_conteudo_atendimento'),
-    path('cadastrar_atendimento', views.cadastrar_atendimento, name = 'cadastrar_atendimento'),
+    path('<int:paciente_id>/cadastrar_atendimento/', views.cadastrar_atendimento, name = 'cadastrar_atendimento'),
     path('inserir_texto_ajax', views.inserir_texto_ajax, name = 'inserir_texto_ajax'),
     path('ajax', views.ajax, name = 'ajax'),
     path('adicionar_prescricao', views.adicionar_prescricao, name = 'adicionar_prescricao'),
+    path('<int:question_id>/detail/', views.detail, name='detail'), 
   
     
     

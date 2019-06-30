@@ -4,6 +4,7 @@ from mrApp.models import Paciente, Atendimento, Post, Receituario
 import json
 import datetime
 import logging
+from django.urls import reverse
 
 from .forms import PacienteForm, ProcurarPacienteForm, AtendimentoForm, ReceituarioForm, PostForm
 
@@ -100,7 +101,7 @@ def conversor_data(date_provided):
     date_converted = datetime.datetime.strptime(date_provided, "%d-%m-%Y").strftime('%Y-%m-%d')
     return date_converted
 
-def pesquisar_datas_atendimento(request):
+def pesquisar_datas_atendimento(request, paciente_id):
     ''' Elabora rotina para pesquisa lista de data de atendimentos ''' 
     contexts = []
     
@@ -125,9 +126,9 @@ def pesquisar_conteudo_atendimento(request):
         }
     return render(request, 'conteudo_atendimento.html', {'context':context}) 
    
-def cadastrar_atendimento(request):
-    '''Cadastra atendimento '''
-    if request.method == 'POST':
+def cadastrar_atendimento(request, paciente_id):
+    if request.method == 'POST': #se esta view for acionada pelo template cadastrar_atendimento.html
+        
         if not request.POST['data_atendimento']:
             query_set = Atendimento(
                 data_atendimento = datetime.date.today(),
@@ -143,22 +144,19 @@ def cadastrar_atendimento(request):
         
         
         query_set.save()
-        return HttpResponse("Atendimento cadastrado")
+        return HttpResponseRedirect(reverse('pesquisar_datas_atendimento', args=(request.POST['paciente_id'])))
         
     else:
-    
-        form_anamnese = AtendimentoForm()
         
+        paciente = get_object_or_404(Paciente, pk=paciente_id)
         
-        paciente = get_object_or_404(Paciente, id = request.GET['paciente_id'])
+        try:
+            form_anamnese = AtendimentoForm()
+            return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form_anamnese, 'paciente':paciente})
+        except (KeyError, Paciente.DoesNotExist):
+            return HttpResponse("erro")
         
-        '''
-        paciente = {
-            'paciente_id': request.GET['paciente_id']
-        }'''
-        
-        return render(request, 'cadastrar_atendimento.html', {'form_anamnese': form_anamnese, 'paciente':paciente})
-    
+  
 def inserir_texto_ajax(request):
     if request.method=='POST':
         
@@ -192,6 +190,10 @@ def adicionar_prescricao(request):
         form = ReceituarioForm()
     
         return render(request, 'adicionar_prescricao.html', {'form': form})
+    
+    
+def detail(request, question_id):
+    return HttpResponse(question_id)
 
 
     

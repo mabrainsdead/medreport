@@ -7,6 +7,8 @@
   
     Hi {{ user.username | title }}! &nbsp&nbsp <a href="{% url 'logout' %}">Logout</a>
 <div>
+  
+  <h4>template: home</h4>
    <!--Adiciona um paciente -->
    <button type="button" class="btn btn btn-lg"><a href="{% url 'adicionar_paciente' %}"> Adicionar paciente</a></button>
    
@@ -19,6 +21,7 @@
        <button type="submit"><i class="fa fa-search"></i></button>
    </form>
   
+
 </div>
 {% else %}
   <p>You are not logged in</p>
